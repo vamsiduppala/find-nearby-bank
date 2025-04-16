@@ -2,6 +2,20 @@
 
 A Spring Boot microservice that returns a list of nearby banks based on a given ZIP code. It communicates with a separate `maps-service` to convert ZIP codes into coordinates and fetch bank data.
 
+## 📁 Project Structure
+
+```
+com.nearbybank.bank/
+├── config/                # Configuration classes
+├── controller/            # REST API endpoints
+├── service/               # Business logic for bank services
+├── model/                 # POJOs for Bank data and related information
+├── repository/            # Data access layer (e.g., database interactions)
+├── BankServiceApplication.java  # Main class
+└── resources/
+    └── application.properties    # Configurations
+```
+
 
 ## 📡 API Endpoint
 
