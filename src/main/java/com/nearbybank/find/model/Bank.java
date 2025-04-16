@@ -1,18 +1,11 @@
 package com.nearbybank.find.model;
-
 public class Bank {
     private String name;
     private String address;
     private String latitude;
     private String longitude;
 
-    // Constructor, Getters, and Setters
-    public Bank(String name, String address, String latitude, String longitude) {
-        this.name = name;
-        this.address = address;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
+    // Getters and setters
 
     public String getName() {
         return name;
@@ -46,3 +39,4 @@ public class Bank {
         this.longitude = longitude;
     }
 }
+
