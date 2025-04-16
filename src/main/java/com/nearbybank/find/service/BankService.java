@@ -1,7 +1,7 @@
 package com.nearbybank.find.service;
 
-import com.nearbybank.find.model.Bank;
 import com.nearbybank.find.integration.GoogleMapsClient;
+import com.nearbybank.find.model.Bank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class BankService {
         String[] coordinates;
 
         try {
-            coordinates = googleMapsClient.getCoordinates(zipcode);
+            coordinates = googleMapsClient.getCoordinatesFromZip(zipcode);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of(
@@ -45,7 +45,7 @@ public class BankService {
         List<Bank> banks;
 
         try {
-            banks = googleMapsClient.findNearbyBanks(coordinates[0], coordinates[1]);
+            banks = googleMapsClient.getNearbyBanks(coordinates[0], coordinates[1]);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of(
